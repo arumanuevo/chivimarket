@@ -3,4 +3,3 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/arumasof/chivimarket.arumasoft.com/
     - /bin/cp -R public $DEPLOYPATH
-    - /bin/cp -R resources $DEPLOYPATH
