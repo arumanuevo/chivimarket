@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/arumasof/chivimarket.arumasoft.com/
-    # Limpiar el deploy path antes de copiar (opcional pero recomendable)
     - /bin/rsync -a --delete --exclude '.git' --exclude 'vendor' ./ $DEPLOYPATH
+
