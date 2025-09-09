@@ -2,5 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/arumasof/chivimarket.arumasoft.com/
-    - /bin/rsync -a --delete --exclude '.git' --exclude 'vendor' ./ $DEPLOYPATH
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R resources $DEPLOYPATH
+
 
