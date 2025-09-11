@@ -2,4 +2,16 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/arumasof/chivimarket.arumasoft.com/
-    - /bin/rsync -a --delete --exclude '.git' --exclude 'vendor' ./ $DEPLOYPATH
+    # Copia el contenido de public (archivos accesibles por el navegador)
+    - /bin/rsync -a public/ $DEPLOYPATH/public/
+    # Copia las vistas Blade
+    - /bin/rsync -a resources/views/ $DEPLOYPATH/resources/views/
+    # Copia el resto de archivos esenciales de Laravel
+    - /bin/rsync -a app/ $DEPLOYPATH/app/
+    - /bin/rsync -a routes/ $DEPLOYPATH/routes/
+    - /bin/rsync -a config/ $DEPLOYPATH/config/
+    - /bin/rsync -a bootstrap/ $DEPLOYPATH/bootstrap/
+    - /bin/rsync -a artisan $DEPLOYPATH
+    - /bin/rsync -a composer.json $DEPLOYPATH
+    - /bin/rsync -a composer.lock $DEPLOYPATH
+
