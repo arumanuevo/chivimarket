@@ -42,7 +42,8 @@ class SocialAuthController extends Controller
             $token = $user->createToken('SocialToken')->accessToken;
     
             // Redirigir al frontend con el token
-            return redirect(env('FRONTEND_URL') . '?token=' . $token);
+           // return redirect(env('FRONTEND_URL') . '?token=' . $token);
+           return redirect(env('FRONTEND_URL2') . '?token=' . $token);
     
         } catch (\Exception $e) {
             // Loguear el error para depuraci���n
