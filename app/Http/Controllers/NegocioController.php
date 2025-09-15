@@ -77,5 +77,11 @@ class NegocioController extends Controller
 
         return response()->json($negocios);
     }
+
+    public function negociosPorUsuario($userId)
+    {
+        return Negocio::where('user_id', $userId)->get();
+    }
+
 }
 

@@ -34,4 +34,10 @@ class ProductoController extends Controller
         $producto->delete();
         return response()->json(null, 204);
     }
+    
+    public function productosPorNegocio($negocioId)
+    {
+        return Producto::where('negocio_id', $negocioId)->get();
+    }
+
 }

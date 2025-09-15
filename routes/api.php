@@ -34,6 +34,9 @@ Route::get('twitter/callback', [SocialAuthController::class, 'handleTwitterCallb
 
 Route::middleware('auth:api')->group(function () {
     Route::get('users', [UserController::class, 'index']);
+    Route::get('negocios/user/{userId}', [NegocioController::class, 'negociosPorUsuario']);
+    Route::get('productos/negocio/{negocioId}', [ProductoController::class, 'productosPorNegocio']);
+    
     Route::get('messages/{user}', [MessageController::class, 'index']);
     Route::post('messages', [MessageController::class, 'store']);
     Route::get('pusher-credentials', function () {
