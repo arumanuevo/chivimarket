@@ -9,11 +9,12 @@ class UserController extends Controller
 {
     public function index()
 {
-    try {
+    return 'ajajaja';
+    /*try {
         return response()->json(User::all());
     } catch (\Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
-    }
+    }*/
 }
 
 }
