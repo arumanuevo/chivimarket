@@ -7,7 +7,7 @@ use App\Http\Controllers\NegocioController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\TransaccionController;
-use App\Http\Controllers\UserController;
+//use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\Auth\SocialAuthController;
 
@@ -34,9 +34,6 @@ Route::get('login/twitter', [SocialAuthController::class, 'redirectToTwitter'])-
 Route::get('twitter/callback', [SocialAuthController::class, 'handleTwitterCallback'])->name('twitter.callback');
 
 
-Route::get('/users', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
 
 Route::middleware('auth:api')->group(function () {
     //Route::get('users', [UserController::class, 'index2']);
