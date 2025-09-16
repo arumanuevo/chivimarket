@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\TransaccionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\Auth\SocialAuthController;
 
 Route::get('/user', function (Request $request) {
@@ -39,6 +40,7 @@ Route::get('/users', function (Request $request) {
 
 Route::middleware('auth:api')->group(function () {
     //Route::get('users', [UserController::class, 'index2']);
+    Route::get('users', [UsuariosController::class, 'index']);
     Route::get('negocios/user/{userId}', [NegocioController::class, 'negociosPorUsuario']);
     Route::get('productos/negocio/{negocioId}', [ProductoController::class, 'productosPorNegocio']);
 
