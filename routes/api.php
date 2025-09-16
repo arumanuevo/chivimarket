@@ -10,6 +10,7 @@ use App\Http\Controllers\TransaccionController;
 //use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\TestController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -57,7 +58,7 @@ Route::middleware('auth:api')->group(function () {
         return response($auth);
     });
 });
-
+Route::get('/test', [TestController::class, 'index']);
 
 
 
