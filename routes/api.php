@@ -34,7 +34,7 @@ Route::get('twitter/callback', [SocialAuthController::class, 'handleTwitterCallb
 
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('users', [UserController::class, 'index']);
+    Route::get('users', [UserController::class, 'index2']);
     Route::get('negocios/user/{userId}', [NegocioController::class, 'negociosPorUsuario']);
     Route::get('productos/negocio/{negocioId}', [ProductoController::class, 'productosPorNegocio']);
 
