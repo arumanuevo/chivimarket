@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        dd('santiago');
+        
         return response()->json(User::all());
     }
 }
