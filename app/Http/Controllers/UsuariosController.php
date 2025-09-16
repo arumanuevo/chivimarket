@@ -7,7 +7,7 @@ use App\Models\User;
 
 class UsuariosController extends Controller
 {
-    public function index2()
+    public function index()
     {
        
         try {
