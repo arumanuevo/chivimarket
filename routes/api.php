@@ -32,7 +32,11 @@ Route::get('facebook/callback', [SocialAuthController::class, 'handleFacebookCal
 Route::get('login/twitter', [SocialAuthController::class, 'redirectToTwitter'])->name('login.twitter');
 Route::get('twitter/callback', [SocialAuthController::class, 'handleTwitterCallback'])->name('twitter.callback');
 
-Route::get('users', [UserController::class, 'index2']);
+
+Route::get('/users', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+
 Route::middleware('auth:api')->group(function () {
     //Route::get('users', [UserController::class, 'index2']);
     Route::get('negocios/user/{userId}', [NegocioController::class, 'negociosPorUsuario']);
