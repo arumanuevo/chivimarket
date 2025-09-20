@@ -20,15 +20,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //$this->registerPolicies();
+       // En app/Providers/AppServiceProvider.php
+public function boot(): void
+{
+    if (class_exists(\Laravel\Passport\Passport::class)) {
+        Passport::hashClientSecrets();
+        Passport::tokensExpireIn(now()->addDays(15));
+    }
+}
 
-        //Passport::routes();
-        $this->registerPolicies();
-
-    // Asegúrate de que esta línea esté presente y descomentada:
-    Passport::hashClientSecrets();
-    Passport::tokensExpireIn(now()->addDays(15)); // Opcional: configuración de expiración
-    Passport::refreshTokensExpireIn(now()->addDays(30));
-    Passport::personalAccessTokensExpireIn(now()->addMonths(6));
     }
 }
