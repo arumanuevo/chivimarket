@@ -23,5 +23,12 @@ class AppServiceProvider extends ServiceProvider
         //$this->registerPolicies();
 
         //Passport::routes();
+        $this->registerPolicies();
+
+    // Asegúrate de que esta línea esté presente y descomentada:
+    Passport::hashClientSecrets();
+    Passport::tokensExpireIn(now()->addDays(15)); // Opcional: configuración de expiración
+    Passport::refreshTokensExpireIn(now()->addDays(30));
+    Passport::personalAccessTokensExpireIn(now()->addMonths(6));
     }
 }
