@@ -20,9 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (class_exists(\Laravel\Passport\Passport::class)) {
-            Passport::hashClientSecrets();
-            Passport::tokensExpireIn(now()->addDays(15));
-        }
+        //$this->registerPolicies();
+
+        //Passport::routes();
     }
 }
